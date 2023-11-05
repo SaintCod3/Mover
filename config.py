@@ -1,12 +1,12 @@
 import sys
 import json
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLineEdit, QPushButton, QLabel, QFileDialog, QMessageBox
+from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLineEdit, QPushButton, QLabel, QFileDialog
 
 class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.nombres = ["Consola 1", "Consola 2", "Consola 3", "Consola 4", "Consola 5"]
+        self.nombres = ["PSX", "PS2", "Dreamcast", "Genesis", "PC-FX"]
         self.directorios = {}
 
         self.layout = QVBoxLayout()
@@ -36,15 +36,7 @@ class MainWindow(QWidget):
     def save_to_json(self):
         with open('directorios.json', 'w') as file:
             json.dump(self.directorios, file, indent=4)
-        self.show_dialog()
-
-    def show_dialog(self):
-        msg_box = QMessageBox()
-        msg_box.setIcon(QMessageBox.Information)
-        msg_box.setText("Datos guardados en directorios.json")
-        msg_box.setWindowTitle("Información")
-        msg_box.setStandardButtons(QMessageBox.Ok)
-        msg_box.exec_()
+        print("Datos guardados en directorios.json")
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
