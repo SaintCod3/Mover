@@ -6,7 +6,7 @@ class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.nombres = ["PSX", "PS2", "Dreamcast", "Genesis", "PC-FX"]
+        self.nombres = ["Consola 1", "Consola 2", "Consola 3", "Consola 4", "Consola 5"]
         self.directorios = {}
 
         self.layout = QVBoxLayout()
